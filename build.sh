@@ -5,17 +5,17 @@
 ## Copy this script inside the kernel directory
 KERNEL_DEFCONFIG=veux_defconfig
 ANYKERNEL3_DIR=$PWD/AnyKernel3/
-FINAL_KERNEL_ZIP=Paimon-Kernel-veux-KSU-$(date '+%Y%m%d').zip
+FINAL_KERNEL_ZIP=PaimonCLO-vauxite(qgki)-[KSU-NEXT]Kernel-veux-$(date '+%Y%m%d').zip
 export ARCH=arm64
 export KBUILD_BUILD_HOST=Taki
-export KBUILD_BUILD_USER=GoogleFucksYou
+export KBUILD_BUILD_USER=Embraceyourself
 export KBUILD_COMPILER_STRING="$($HOME/clang-r510928/bin/clang --version | head -n 1 | perl -pe 's/\(http.*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//')"
-export PATH="$HOME/clang-r547379/bin:$PATH"
+export PATH="$HOME/clang-r522817/bin:$PATH"
 
 # clone clang
 if ! [ -d "$HOME/clang-r547379" ]; then
 echo "Clang not found! Cloning..."
-if ! git clone -q https://gitlab.com/crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r547379.git -b 15.0 --depth=1 --single-branch ~/clang-r547379; then
+if ! git clone -q https://gitlab.com/ThankYouMario/android_prebuilts_clang-standalone.git -b 18 --depth=1 --single-branch ~/clang-r522817; then
 echo "Cloning failed! Aborting..."
 exit 1
 fi
